@@ -1,0 +1,1 @@
+A weather website created using the data from <a href="https://api.meteo.lt/">Meteo.lt API</a>. The data is licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode.lt">Creative Commons Attribution-ShareAlike 4.0 (CC BY-SA 4.0)</a>. The website will mainly show the data of Lithuanian territory.
