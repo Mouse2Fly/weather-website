@@ -7,21 +7,21 @@ import './App.css'
 
 function App() {
 
-    const [places, setPlaces] = useState();
+    const [places, setPlaces] = useState<JSON[]>([]);
     const [placeCode, setPlaceCode] = useState("");
 
     const getPlaces = async () => {
         try {
             //const Response = await axios.get("/weather")
             //setPlaces(Response.data);
-            const Response = await fetchPlaces();
+            const Response: JSON[] = await fetchPlaces();
+            //console.log(Response);
             setPlaces(Response);
             console.log(places);
         } catch (error) {
             console.error("Error fetching places:", error);
         }
     }
-
     const onChangeHandler = (event) => {
         setPlaceCode(event.target.value);
 };
