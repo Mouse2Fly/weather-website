@@ -6,17 +6,22 @@ const fetchPlaces = async () => {
         throw new Error(`Error fetching places`);
     }
 
-    const filteredData: JSON[] = []
+    const filteredCodes: string[] = []
+    const filteredNames: string[] = []
 
     for (let i = 0; i < data.length; i++) { // Filter only places in Lithuania
         if (data[i].countryCode === "LT") { // There are also data from Latvia and Estonia
-            filteredData.push(data[i]);
+            filteredCodes.push(data[i].code);
         }
     }
 
-    //console.log(filteredData);
+    for (let i = 0; i < data.length; i++) { // Filter only places in Lithuania
+        if (data[i].countryCode === "LT") { // There are also data from Latvia and Estonia
+            filteredNames.push(data[i].name);
+        }
+    }
 
-    return filteredData;
+    return { filteredCodes, filteredNames };
 
 }
 

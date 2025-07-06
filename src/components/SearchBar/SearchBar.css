@@ -1,11 +1,3 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Mulish_Variable_Wght", sans-serif; */
-    /* font-family: sans-serif; */
-}
-
 .searchContainer {
     display: flex;
     align-items: center;
@@ -40,9 +32,25 @@
     background-color: #01264b;
 }
 
-.weatherContainer {
-    display: flex;
-    flex-direction: row;
-    margin-top: 20px;
-    justify-content: center;
+.searchSuggestion{
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 600px;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1000;
+    margin: auto;
+    top: 64px;
+    margin-left: -6.5rem;
+    visibility: hidden;
+}
+
+.suggestion{
+    padding: 8px;
+}
+.suggestion:hover {
+    background-color: #f0f0f0;
+    cursor: pointer;
 }

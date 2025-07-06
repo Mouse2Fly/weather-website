@@ -1,0 +1,29 @@
+.shortContainer{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    width: 1000px;
+    gap: 20px;
+}
+
+.mainWeather{
+    border: 3px solid #000;
+    border-radius: 25px;
+    padding: 120px;
+    width: 100%;
+}
+
+.timedWeather{
+    border: 3px solid #000;
+    border-radius: 25px;
+    padding: 120px;
+    width: 100%;
+}
+
+.extraWeather{
+    border: 3px solid #000;
+    border-radius: 25px;
+    padding: 120px;
+    width: 100%;
+}
+
