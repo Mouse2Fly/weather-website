@@ -2,6 +2,15 @@ import './ShortWeather.css';
 
 const ShortWeather = () => { // short term weather component
 
+    // let bool = true;
+
+    // while (bool) {
+    //     if(!weather)
+    //         continue
+    //     else{
+    //         bool = false;
+    //     }
+    // }
 
     return (
         <div className="shortContainer">
