@@ -8,6 +8,8 @@ import { useEffect, useState } from 'react';
 import fetchPlaces from './services/FetchPlaces'
 import fetchWeather from './services/FetchWeather'
 
+import weatherStuff from './services/long-term.json'; // import test data
+
 function App() {
 
     //https://basmilius.github.io/weather-icons/index-fill.html
@@ -16,6 +18,9 @@ function App() {
     const [placesCodes, setPlacesCodes] = useState<string[]>([]);
     const [place, setPlace] = useState<string>("");
     const [weatherData, setWeatherData] = useState<JSON>();
+
+    const [longPrep, setLongPrep] = useState<boolean>(false);
+    const [shortPrep, setShortPrep] = useState<boolean>(false);
 
     // //const test: string[] = ["orange", "apple", "banana", "peach", "pineapple", "grape", "kiwi", "mango", "melon", "papaya", "pear", "plum", "pomegranate", "raspberry", "strawberry", "watermelon", "blueberry", "blackberry", "coconut", "fig", "guava", "lychee", "tangerine", "clementine", "nectarine", "apricot", "cherry"];
     const [suggestions, setSuggestions] = useState<string[]>([]);
@@ -83,7 +88,7 @@ function App() {
         fetchWeather(placesCodes[CodeIndex])
             .then((data) => {
                 //console.log(data.forecastTimestamps);
-                setWeatherData(data.forecastTimestamps);
+                setWeatherData(data);
                 // Here you can handle the weather data as needed
             })
             .catch((error) => {
@@ -104,6 +109,7 @@ function App() {
 
   return (
     <div>
+        <button className='testButton' onClick={prepTest}>Test</button>
         <div className='searchContainer'>
             <input type="text" className='searchInput' value={place} onChange={(e)=>changeHandler(e)} placeholder="Search for a place" />
             <button className='searchConfirm' onClick={activation}>Search</button>
@@ -117,10 +123,10 @@ function App() {
         </div>
         
         <div className='weatherContainer'>
-            {/* <ShortWeather weather={weatherData}/>
-            <LongWeather weather={weatherData}/> */}
+            {/* <ShortWeather weatherData={weatherData}/> */}
             <ShortWeather/>
-            <LongWeather/>
+            <LongWeather weatherData={weatherStuff} longPrep={longPrep} setLongPrep={setLongPrep}/>
+            {/* <LongWeather/> */}
         </div>
 
     </div>

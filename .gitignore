@@ -12,6 +12,9 @@ dist
 dist-ssr
 *.local
 concept
+src/services/long-term - Copy.json
+src/components/LongWeather/LongWeather - Copy (2).tsx
+src/components/LongWeather/LongWeather - Copy.tsx
 
 # Editor directories and files
 .vscode/*
